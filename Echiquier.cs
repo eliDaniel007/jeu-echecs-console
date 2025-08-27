@@ -6,7 +6,7 @@ namespace JeuEchecs
     {
         private Piece[,] plateau;
         public int NombreCoups { get; private set; }
-        
+
         public Echiquier()
         {
             plateau = new Piece[8, 8];
@@ -49,12 +49,12 @@ namespace JeuEchecs
             plateau[7, 4] = new Piece(TypePiece.Roi, Couleur.Blanc);
             plateau[0, 4] = new Piece(TypePiece.Roi, Couleur.Noir);
         }
-        
+
         public void Afficher()
         {
             Console.WriteLine("  a b c d e f g h");
             Console.WriteLine("  ─────────────────");
-            
+
             for (int ligne = 0; ligne < 8; ligne++)
             {
                 Console.Write($"{8 - ligne} ");
@@ -273,7 +273,7 @@ namespace JeuEchecs
                 }
                 if (ligneRoi != -1) break;
             }
-            
+
             // Vérifier si une pièce adverse peut attaquer le roi
             Couleur couleurAdverse = tourBlanc ? Couleur.Noir : Couleur.Blanc;
             
@@ -290,7 +290,7 @@ namespace JeuEchecs
                     }
                 }
             }
-            
+
             return false;
         }
     }
